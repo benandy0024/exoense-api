@@ -2,17 +2,19 @@ import json
 import requests
 import os
 
-AUTH_ENDPOINT = "http://127.0.0.1:8000/api/auth/jwt/"
+AUTH_ENDPOINT = "http://127.0.0.1:8000/api/auth/register"
 # REFRESH_ENDPOINTS= AUTH_ENDPOINTS+'refresh/'
 ENDPOINTS='http://127.0.0.1:8000/api/v1/list'
 headers={
     "Content-Type":"application/json"
 }
 data={
-    'username':'andy',
-    'password':'1234'
+    'username':'andy13',
+    'email':'andy13@gmail.com',
+    'password':'1234',
+    'password2':'1234'
 }
-r = requests.post(AUTH_ENDPOINT, data=json.dumps(data),         headers=headers)
+r = requests.post(AUTH_ENDPOINT, data=json.dumps(data), headers=headers)
 token=r.json()
 print(token)
 # refresh_data={
